@@ -1,3 +1,4 @@
+import 'package:doctor_appointment_app/model/diary.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -49,8 +50,8 @@ class _HomePageState extends State<HomePage> {
                                           children: [
                                             Text(
                                               '👋 Hello,',
-                                              style:
-                                                  TextStyle(color: Colors.white),
+                                              style: TextStyle(
+                                                  color: Colors.white),
                                             ),
                                             SizedBox(
                                               height: 12,
@@ -93,7 +94,53 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 Expanded(
                                   flex: 6,
-                                  child: Placeholder(),
+                                  child: ListView.builder(
+                                    scrollDirection: Axis.horizontal,
+                                    itemCount: callItems.length,
+                                    itemBuilder: (context, index) {
+                                      return Padding(
+                                        padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                          children: [
+                                            Text(
+                                              callItems[index].weekday,
+                                              style:
+                                                  TextStyle(color: Colors.white),
+                                            ),
+                                            CircleAvatar(
+                                              child: Text(callItems[index].day),
+                                              backgroundColor:
+                                                  Colors.white.withOpacity(0.2),
+                                              foregroundColor: Colors.white,
+                                            ),
+                                            Row(
+                                              children: [
+                                                CircleAvatar(
+                                                  radius: 2,
+                                                  backgroundColor:
+                                                      callItems[index].isEvent
+                                                          ? Colors.white
+                                                          : Colors.transparent,
+                                                ),
+                                                SizedBox(
+                                                  width: 8,
+                                                ),
+                                                CircleAvatar(
+                                                  radius: 2,
+                                                  backgroundColor:
+                                                  callItems[index].isEvent
+                                                      ? Colors.white
+                                                      : Colors.transparent,
+                                                )
+                                              ],
+                                            )
+                                          ],
+                                        ),
+                                      );
+                                    },
+                                  ),
                                 ),
                               ],
                             ),
@@ -111,21 +158,18 @@ class _HomePageState extends State<HomePage> {
                         child: Text('Page 1'),
                       ),
                     );
-
                   else if (value == 2)
                     return Container(
                       child: Center(
                         child: Text('Page 2'),
                       ),
                     );
-
                   else if (value == 3)
                     return Container(
                       child: Center(
                         child: Text('Page 3'),
                       ),
                     );
-
                   else
                     return Container(
                       child: Center(
@@ -148,8 +192,7 @@ class _HomePageState extends State<HomePage> {
                             height: 3,
                             width: 24,
                             decoration: BoxDecoration(
-                              color:
-                                  value == 0 ? Colors.orange : Colors.white,
+                              color: value == 0 ? Colors.orange : Colors.white,
                             ),
                           ),
                           IconButton(
