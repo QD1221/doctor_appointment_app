@@ -99,15 +99,16 @@ class _HomePageState extends State<HomePage> {
                                     itemCount: callItems.length,
                                     itemBuilder: (context, index) {
                                       return Padding(
-                                        padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 4, horizontal: 8),
                                         child: Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceAround,
                                           children: [
                                             Text(
                                               callItems[index].weekday,
-                                              style:
-                                                  TextStyle(color: Colors.white),
+                                              style: TextStyle(
+                                                  color: Colors.white),
                                             ),
                                             CircleAvatar(
                                               child: Text(callItems[index].day),
@@ -130,9 +131,9 @@ class _HomePageState extends State<HomePage> {
                                                 CircleAvatar(
                                                   radius: 2,
                                                   backgroundColor:
-                                                  callItems[index].isEvent
-                                                      ? Colors.white
-                                                      : Colors.transparent,
+                                                      callItems[index].isEvent
+                                                          ? Colors.white
+                                                          : Colors.transparent,
                                                 )
                                               ],
                                             )
@@ -146,9 +147,200 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                         ),
+                        SizedBox(
+                          height: 8,
+                        ),
                         Expanded(
                           flex: 12,
-                          child: Placeholder(),
+                          child: ListView(
+                            padding: EdgeInsets.zero,
+                            children: [
+                              Container(
+                                color: Colors.white,
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 16, vertical: 16),
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          'Services'.toUpperCase(),
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        Text(
+                                          'See All'.toUpperCase(),
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.orange,
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: 16,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Column(
+                                          children: [
+                                            Container(
+                                              height: 64,
+                                              width: 64,
+                                              child: Stack(
+                                                children: [
+                                                  Positioned(
+                                                    left: 0,
+                                                    right: 0,
+                                                    top: 0,
+                                                    bottom: 0,
+                                                    child: CircleAvatar(
+                                                      backgroundColor:
+                                                          Colors.teal[200]!,
+                                                    ),
+                                                  ),
+                                                  Positioned(
+                                                    left: 8,
+                                                    right: 8,
+                                                    top: 8,
+                                                    bottom: 8,
+                                                    child: CircleAvatar(
+                                                      backgroundColor:
+                                                          Colors.teal[500]!,
+                                                    ),
+                                                  )
+                                                ],
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 16,
+                                            ),
+                                            Text('Covid-19')
+                                          ],
+                                        ),
+                                        Column(
+                                          children: [
+                                            GestureDetector(
+                                              onTap: () => Navigator.of(context)
+                                                  .pushNamed('/doctors'),
+                                              child: Container(
+                                                height: 64,
+                                                width: 64,
+                                                child: Stack(
+                                                  children: [
+                                                    Positioned(
+                                                      left: 0,
+                                                      right: 0,
+                                                      top: 0,
+                                                      bottom: 0,
+                                                      child: CircleAvatar(
+                                                        backgroundColor:
+                                                            Colors.teal[200]!,
+                                                      ),
+                                                    ),
+                                                    Positioned(
+                                                      left: 8,
+                                                      right: 8,
+                                                      top: 8,
+                                                      bottom: 8,
+                                                      child: CircleAvatar(
+                                                        backgroundColor:
+                                                            Colors.teal[500]!,
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 16,
+                                            ),
+                                            Text('Doctors')
+                                          ],
+                                        ),
+                                        Column(
+                                          children: [
+                                            Container(
+                                              height: 64,
+                                              width: 64,
+                                              child: Stack(
+                                                children: [
+                                                  Positioned(
+                                                    left: 0,
+                                                    right: 0,
+                                                    top: 0,
+                                                    bottom: 0,
+                                                    child: CircleAvatar(
+                                                      backgroundColor:
+                                                          Colors.teal[200]!,
+                                                    ),
+                                                  ),
+                                                  Positioned(
+                                                    left: 8,
+                                                    right: 8,
+                                                    top: 8,
+                                                    bottom: 8,
+                                                    child: CircleAvatar(
+                                                      backgroundColor:
+                                                          Colors.teal[500]!,
+                                                    ),
+                                                  )
+                                                ],
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 16,
+                                            ),
+                                            Text('Hospitals')
+                                          ],
+                                        ),
+                                        Column(
+                                          children: [
+                                            Container(
+                                              height: 64,
+                                              width: 64,
+                                              child: Stack(
+                                                children: [
+                                                  Positioned(
+                                                    left: 0,
+                                                    right: 0,
+                                                    top: 0,
+                                                    bottom: 0,
+                                                    child: CircleAvatar(
+                                                      backgroundColor:
+                                                          Colors.teal[200]!,
+                                                    ),
+                                                  ),
+                                                  Positioned(
+                                                    left: 8,
+                                                    right: 8,
+                                                    top: 8,
+                                                    bottom: 8,
+                                                    child: CircleAvatar(
+                                                      backgroundColor:
+                                                          Colors.teal[500]!,
+                                                    ),
+                                                  )
+                                                ],
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 16,
+                                            ),
+                                            Text('Medicines')
+                                          ],
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ],
                     );
